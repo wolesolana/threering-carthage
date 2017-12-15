@@ -29,31 +29,31 @@ enum RingIndex : Int {
   case outer  = 2
 }
 
-let RingCompletedNotification = "RingCompletedNotification"
-let AllRingsCompletedNotification = "AllRingsCompletedNotification"
+public let RingCompletedNotification = "RingCompletedNotification"
+public let AllRingsCompletedNotification = "AllRingsCompletedNotification"
 
 @IBDesignable
-class ThreeRingView : UIView {
-  
+public class ThreeRingView : UIView {
+
   fileprivate let rings : [RingIndex : RingLayer] = [.inner : RingLayer(), .middle : RingLayer(), .outer : RingLayer()]
   fileprivate let ringColors = [UIColor.hrPinkColor, UIColor.hrGreenColor, UIColor.hrBlueColor]
-  
-  override init(frame: CGRect) {
+
+  public override init(frame: CGRect) {
     super.init(frame: frame)
     sharedInitialization()
   }
-  
-  required init?(coder aDecoder: NSCoder) {
+
+  public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     sharedInitialization()
   }
-  
-  override func layoutSubviews() {
+
+  public override func layoutSubviews() {
     super.layoutSubviews()
     drawLayers()
   }
-  
-  
+
+
   fileprivate func sharedInitialization() {
     backgroundColor = UIColor.black
     for (_, ring) in rings {
@@ -62,14 +62,14 @@ class ThreeRingView : UIView {
       ring.ringBackgroundColor = ringBackgroundColor.cgColor
       ring.ringWidth = ringWidth
     }
-    
+
     // Set the default values
     for (index, ring) in rings {
         setColorForRing(index, color: ringColors[index.rawValue])
         ring.value = 0.0
     }
   }
-  
+
   fileprivate func drawLayers() {
     let size = min(bounds.width, bounds.height)
     let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
@@ -80,10 +80,10 @@ class ThreeRingView : UIView {
       ring.position = center
     }
   }
-  
+
   //: API Properties
   @IBInspectable
-  var ringWidth : CGFloat = 20.0 {
+  public var ringWidth : CGFloat = 20.0 {
     didSet {
       drawLayers()
       for (_, ring) in rings {
@@ -92,27 +92,27 @@ class ThreeRingView : UIView {
     }
   }
   @IBInspectable
-  var ringPadding : CGFloat = 1.0 {
+  public var ringPadding : CGFloat = 1.0 {
     didSet {
       drawLayers()
     }
   }
   @IBInspectable
-  var ringBackgroundColor : UIColor = UIColor.darkGray {
+  public var ringBackgroundColor : UIColor = UIColor.darkGray {
     didSet {
       for (_, ring) in rings {
         ring.ringBackgroundColor = ringBackgroundColor.cgColor
       }
     }
   }
-  
+
   var animationDuration : TimeInterval = 1.5
 }
 
 //: Values
 extension ThreeRingView {
   @IBInspectable
-  var innerRingValue : CGFloat {
+  public var innerRingValue : CGFloat {
     get {
       return rings[.inner]?.value ?? 0
     }
@@ -122,7 +122,7 @@ extension ThreeRingView {
     }
   }
   @IBInspectable
-  var middleRingValue : CGFloat {
+  public var middleRingValue : CGFloat {
     get {
       return rings[.middle]?.value ?? 0
     }
@@ -132,7 +132,7 @@ extension ThreeRingView {
     }
   }
   @IBInspectable
-  var outerRingValue : CGFloat {
+  public var outerRingValue : CGFloat {
     get {
       return rings[.outer]?.value ?? 0
     }
@@ -147,7 +147,7 @@ extension ThreeRingView {
     rings[ringIndex]?.setValue(value, animated: animated)
     CATransaction.commit()
   }
-  
+
   fileprivate func maybePostNotification(_ old: CGFloat, new: CGFloat, current: RingIndex) {
     if old < 1 && new >= 1 { //threshold crossed
       let allDone: Bool
@@ -166,7 +166,7 @@ extension ThreeRingView {
       }
     }
   }
-  
+
   fileprivate func postAllRingsCompletedNotification() {
     NotificationCenter.default.post(name: Notification.Name(rawValue: AllRingsCompletedNotification), object: self)
   }
@@ -178,7 +178,7 @@ extension ThreeRingView {
 //: Colors
 extension ThreeRingView {
   @IBInspectable
-  var innerRingColor : UIColor {
+  public var innerRingColor : UIColor {
     get {
       return colorForRing(.inner)
     }
@@ -187,7 +187,7 @@ extension ThreeRingView {
     }
   }
   @IBInspectable
-  var middleRingColor : UIColor {
+  public var middleRingColor : UIColor {
     get {
       return UIColor.clear
     }
@@ -196,7 +196,7 @@ extension ThreeRingView {
     }
   }
   @IBInspectable
-  var outerRingColor : UIColor {
+  public var outerRingColor : UIColor {
     get {
       return UIColor.clear
     }
@@ -204,11 +204,11 @@ extension ThreeRingView {
       setColorForRing(.outer, color: newColor)
     }
   }
-  
+
   fileprivate func colorForRing(_ index: RingIndex) -> UIColor {
     return UIColor(cgColor: rings[index]!.ringColors.0)
   }
-  
+
   fileprivate func setColorForRing(_ index: RingIndex, color: UIColor) {
     rings[index]?.ringColors = (color.cgColor, color.darkerColor.cgColor)
   }
