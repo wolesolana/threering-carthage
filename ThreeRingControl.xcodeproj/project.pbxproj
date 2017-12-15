@@ -10,6 +10,14 @@
 		F9F2D3BA1FE4470F0032223D /* ThreeRingControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F2D3B01FE4470F0032223D /* ThreeRingControl.framework */; };
 		F9F2D3BF1FE4470F0032223D /* ThreeRingControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D3BE1FE4470F0032223D /* ThreeRingControlTests.swift */; };
 		F9F2D3C11FE4470F0032223D /* ThreeRingControl.h in Headers */ = {isa = PBXBuildFile; fileRef = F9F2D3B31FE4470F0032223D /* ThreeRingControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9F2D3D21FE447940032223D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D3CA1FE447940032223D /* Utilities.swift */; };
+		F9F2D3D31FE447940032223D /* RingTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D3CC1FE447940032223D /* RingTip.swift */; };
+		F9F2D3D41FE447940032223D /* RingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D3CE1FE447940032223D /* RingLayer.swift */; };
+		F9F2D3D51FE447940032223D /* ThreeRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D3CF1FE447940032223D /* ThreeRingView.swift */; };
+		F9F2D3D61FE447940032223D /* Fanfare.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D3D01FE447940032223D /* Fanfare.swift */; };
+		F9F2D3D71FE447940032223D /* CircularGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F2D3D11FE447940032223D /* CircularGradient.swift */; };
+		F9F2D3D81FE447B90032223D /* coin07.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9F2D3CD1FE447940032223D /* coin07.mp3 */; };
+		F9F2D3D91FE447C50032223D /* winning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9F2D3CB1FE447940032223D /* winning.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +37,14 @@
 		F9F2D3B91FE4470F0032223D /* ThreeRingControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeRingControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F2D3BE1FE4470F0032223D /* ThreeRingControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeRingControlTests.swift; sourceTree = "<group>"; };
 		F9F2D3C01FE4470F0032223D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9F2D3CA1FE447940032223D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		F9F2D3CB1FE447940032223D /* winning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = winning.mp3; sourceTree = "<group>"; };
+		F9F2D3CC1FE447940032223D /* RingTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingTip.swift; sourceTree = "<group>"; };
+		F9F2D3CD1FE447940032223D /* coin07.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin07.mp3; sourceTree = "<group>"; };
+		F9F2D3CE1FE447940032223D /* RingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingLayer.swift; sourceTree = "<group>"; };
+		F9F2D3CF1FE447940032223D /* ThreeRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeRingView.swift; sourceTree = "<group>"; };
+		F9F2D3D01FE447940032223D /* Fanfare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanfare.swift; sourceTree = "<group>"; };
+		F9F2D3D11FE447940032223D /* CircularGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +87,14 @@
 		F9F2D3B21FE4470F0032223D /* ThreeRingControl */ = {
 			isa = PBXGroup;
 			children = (
+				F9F2D3D11FE447940032223D /* CircularGradient.swift */,
+				F9F2D3CD1FE447940032223D /* coin07.mp3 */,
+				F9F2D3D01FE447940032223D /* Fanfare.swift */,
+				F9F2D3CE1FE447940032223D /* RingLayer.swift */,
+				F9F2D3CC1FE447940032223D /* RingTip.swift */,
+				F9F2D3CF1FE447940032223D /* ThreeRingView.swift */,
+				F9F2D3CA1FE447940032223D /* Utilities.swift */,
+				F9F2D3CB1FE447940032223D /* winning.mp3 */,
 				F9F2D3B31FE4470F0032223D /* ThreeRingControl.h */,
 				F9F2D3B41FE4470F0032223D /* Info.plist */,
 			);
@@ -148,6 +172,7 @@
 				TargetAttributes = {
 					F9F2D3AF1FE4470F0032223D = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					F9F2D3B81FE4470F0032223D = {
@@ -179,6 +204,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9F2D3D81FE447B90032223D /* coin07.mp3 in Resources */,
+				F9F2D3D91FE447C50032223D /* winning.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +223,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9F2D3D21FE447940032223D /* Utilities.swift in Sources */,
+				F9F2D3D51FE447940032223D /* ThreeRingView.swift in Sources */,
+				F9F2D3D71FE447940032223D /* CircularGradient.swift in Sources */,
+				F9F2D3D61FE447940032223D /* Fanfare.swift in Sources */,
+				F9F2D3D41FE447940032223D /* RingLayer.swift in Sources */,
+				F9F2D3D31FE447940032223D /* RingTip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +367,7 @@
 		F9F2D3C51FE4470F0032223D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +381,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.osolana.ThreeRingControl;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +390,7 @@
 		F9F2D3C61FE4470F0032223D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +412,7 @@
 		F9F2D3C81FE4470F0032223D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E3ZSDPCDKZ;
 				INFOPLIST_FILE = ThreeRingControlTests/Info.plist;
@@ -390,6 +427,7 @@
 		F9F2D3C91FE4470F0032223D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E3ZSDPCDKZ;
 				INFOPLIST_FILE = ThreeRingControlTests/Info.plist;
